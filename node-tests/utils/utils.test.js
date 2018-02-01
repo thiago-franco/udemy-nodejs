@@ -10,9 +10,26 @@ it('should add two numbers', () => {
     // }
 });
 
+it('should async add two numbers', (done) => {
+    utils.asyncAdd(2018,-1995, sum => {
+        expect(sum).toBe(23).toBeA('number');
+        done();
+    });
+});
+
 it('should square the number', () => {
     var res = utils.square(10);
     expect(res).toBe(100).toBeA('number');
+    // if(res != 100) {
+    //     throw new Error(`Expected 100, got ${res}`);
+    // }
+});
+
+it('should async square the number', (done) => {
+    utils.asyncSquare(10, res => {
+        expect(res).toBe(100).toBeA('number');
+        done();
+    });
     // if(res != 100) {
     //     throw new Error(`Expected 100, got ${res}`);
     // }
